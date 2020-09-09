@@ -1,19 +1,24 @@
-<div class="field">
-    <%= s.label :no %>
-    <%= s.text_field :no %>
-</div>
+<div style="margin-bottom: 1rem;">
+    <div class="field">
+        <%= s.label :no %>
+        <%= s.text_field :no %>
+    </div>
 
-<div class="field">  
-    <%= s.label :name %>
-    <%= s.text_field :name %>
-</div>
+    <div class="field">  
+        <%= s.label :name %>
+        <%= s.text_field :name %>
+    </div>
 
-<div class="field">
-    <%= s.label :railway_name %>
-    <%= s.text_field :railway_name %>
-</div>
+    <div class="field">
+        <%= s.label :railway_name %>
+        <%= s.text_field :railway_name %>
+    </div>
 
-<div class="field">
-    <%= s.label :min_to_walk %>
-    <%= s.text_field :min_to_walk %>
+    <div class="field">
+        <%= s.label :min_to_walk %>
+        <%= s.text_field :min_to_walk %>
+    </div>
+
+    <%= s.hidden_field :_destroy %>
+    <%= link_to "Remove", "#", class: "remove_fields" %>
 </div>

@@ -37,14 +37,33 @@
   </div>
 
   <div class="field">
-    <b>Station Near</b>
+    <p><b>Station Near</b></p>
     <%= form.fields_for :stations do |s| %>
       <%= render 'station_fields', s: s %>
     <% end %>
+    <p>
     <%= link_to_add_fields "Add Station", form, :stations %>
+    </p>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+<script>
+  $('form').on('click', '.remove_fields', function(e) {
+    $(this).prev('input[type=hidden]').val('1');
+    $(this).closest('div').hide();
+    return e.preventDefault();
+  })
+
+  $('form').on('click', '.add_fields', function(e) {
+    var regexp, time;
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+
+    $(this).before($(this).data('fields').replace(regexp, time));
+    return e.preventDefault();
+  })
+</script>
