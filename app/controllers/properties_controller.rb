@@ -1,28 +1,21 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
-  # GET /properties
-  # GET /properties.json
   def index
     @properties = Property.all
   end
 
-  # GET /properties/1
-  # GET /properties/1.json
   def show
   end
 
-  # GET /properties/new
   def new
     @property = Property.new
+    @property.stations.build
   end
 
-  # GET /properties/1/edit
   def edit
   end
 
-  # POST /properties
-  # POST /properties.json
   def create
     @property = Property.new(property_params)
 
@@ -37,8 +30,6 @@ class PropertiesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /properties/1
-  # PATCH/PUT /properties/1.json
   def update
     respond_to do |format|
       if @property.update(property_params)
@@ -51,8 +42,6 @@ class PropertiesController < ApplicationController
     end
   end
 
-  # DELETE /properties/1
-  # DELETE /properties/1.json
   def destroy
     @property.destroy
     respond_to do |format|
@@ -69,6 +58,6 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:name, :rent_fee, :address, :build_year, :remark)
+      params.require(:property).permit(:name, :rent_fee, :address, :build_year, :remark, stations_attributes: [:id, :no, :name, :railway_name, :min_to_walk])
     end
 end

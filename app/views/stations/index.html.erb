@@ -5,6 +5,8 @@
 <table>
   <thead>
     <tr>
+      <th>No</th>
+      <th>Name</th>
       <th>Name</th>
       <th>Railway name</th>
       <th>Min to walk</th>
@@ -16,6 +18,7 @@
   <tbody>
     <% @stations.each do |station| %>
       <tr>
+        <td><%= station.no %></td>
         <td><%= station.name %></td>
         <td><%= station.railway_name %></td>
         <td><%= station.min_to_walk %></td>

@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_09_09_041525) do
   end
 
   create_table "stations", force: :cascade do |t|
+    t.integer "no"
     t.string "name"
     t.string "railway_name"
     t.integer "min_to_walk"

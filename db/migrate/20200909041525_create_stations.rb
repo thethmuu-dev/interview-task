@@ -1,6 +1,7 @@
 class CreateStations < ActiveRecord::Migration[5.2]
   def change
     create_table :stations do |t|
+      t.integer :no
       t.string :name
       t.string :railway_name
       t.integer :min_to_walk

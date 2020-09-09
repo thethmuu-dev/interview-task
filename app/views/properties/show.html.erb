@@ -25,5 +25,20 @@
   <%= @property.remark %>
 </p>
 
+<p>
+  <% if @property.stations.count > 0 %>
+  <strong>Near <%= pluralize(@property.stations.count, "Station") %></strong>
+  <% end %>
+</p>
+
+<p>
+  <% @property.stations.each do |s| %>
+    <b><i>Station <%= s.no %></i></b>
+    <p><%= s.name %></p>
+    <p><%= s.railway_name %></p>
+    <p><%= s.min_to_walk %></p>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>
