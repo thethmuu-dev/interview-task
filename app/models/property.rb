@@ -3,7 +3,7 @@ class Property < ApplicationRecord
     validates :rent_fee, presence: true
     validates :address, presence: true
     validates :build_year, presence: true
-    
+
     has_many :stations, dependent: :destroy
-    accepts_nested_attributes_for :stations, allow_destroy: true
+    accepts_nested_attributes_for :stations, reject_if: :all_blank, allow_destroy: true
 end
