@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  railway_name: MyString
+  min_to_walk: 1
+  property: one
+
+two:
+  name: MyString
+  railway_name: MyString
+  min_to_walk: 1
+  property: two
